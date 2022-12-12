@@ -1,0 +1,190 @@
+XPATH -> XML Path
+
+Types:
+-------
+Absolute XPATH -> Not very much used in real time
+Relative XPATH -> Most preferred xpath
+
+
+Absolute Xpath: starts with single slash and followed by root tag
+---------------
+Xpath -> Index starts with 1
+
+/html/body/div[2]/div[2]/div/h2
+
+- Will take time to write the xpath
+- Might fail when the page design is getting changed
+
+Relative Xpath: starts with // followed by the tagName of the WebElement
+---------------
+Syntax -> //tagName
+
+Attribute Based Xpath:
+-----------------------
+
+Syntax: //tagName[@attributeName='attribute value']
+		//input[@id='username']
+		
+		//label[@for='username']
+		
+Text Based Xpath:
+------------------
+Syntax: //tagName[text()='text value']	
+		//h2[text()='Leaftaps Login']
+		
+Partial Match: contains()
+--------------		
+Syntax: //tagName[contains(@attribute,'partial attribute value')]
+		//label[contains(@for,'user')]
+		
+		//tagName[contains(text(),'partial text')]
+		//h2[contains(text(),'Login')]
+		
+Collection Based Xpath: Using index
+-------------------------
+Syntax: (xpath)[index]
+		(//input[@class='inputLogin'])[2]	
+		
+		
+<p> and <label> -> Parent & Child
+<form> and <label> -> GrandParent & GrandChild
+top -> elder
+bottom -> younger
+<label> and <input> -> Elder Sibling & Younger Sibling
+<label>(username) & <label>(password) -> Elder Cousin & Younger Cousins		
+		
+		
+Advanced Xpath:
+----------------		
+Parent To Child xpath:		
+Syntax: parent Xpath/tagName of child[index]
+		//form[@id='login']/p[2]
+		
+Child to Parent xpath:
+-----------------------
+Syntax: child xpath/parent::tagName of parent
+		//input[@id='password']/parent::p
+		
+		child xpath/..
+		//input[@id='password']/..
+		
+GrandChild to GrandParent:
+---------------------------		
+Syntax: GrandChild xpath/../..		
+		//input[@id='password']/../..
+				or
+		GrandChild xpath/ancestor::tagName of GrandParent
+		//input[@id='password']/ancestor::form
+		
+GrandParent to GrandChild: //
+---------------------------		
+Syntax: GrandParent Xpath//tagName of GrandChild
+		//form[@id='login']//input
+		
+		(//form[@id='login']//input)[1]
+		
+		
+Siblings:
+----------
+Elder to Younger -> Top to Bottom (following)
+----------------
+Syntax: Elder Sibling xpath/following-sibling::tagName of Younger
+		//label[@for='username']/following-sibling::input
+
+
+Younger to Elder -> Bottom to Top (preceding)
+----------------		
+Syntax: Younger Sibling xpath/preceding-sibling::tagName of Elder
+		//input[@id='username']/preceding-sibling::label
+		
+
+
+Cousins:
+---------
+Elder to Younger
+-----------------
+Syntax: Elder Cousin Xpath/following::tagName of Younger
+		//label[@for='username']/following::label
+		
+Younger	to Elder:
+------------------
+Syntax: Younger Cousin Xpath/preceding::tagName of	Elder
+		//input[@type='password']/preceding::input
+
+
+
+following -> It will find the immediate match
+preceding -> It will find the first matching tag from the root tag
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
